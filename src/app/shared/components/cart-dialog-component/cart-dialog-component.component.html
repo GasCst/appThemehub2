@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Your Cart</h2>
+
+<mat-dialog-content>
+  <mat-list *ngIf="data?.cartItems?.themes?.length > 0; else emptyCart">
+
+    <mat-list-item *ngFor="let theme of data.cartItems.themes">
+      <span matListItemTitle>{{ theme.name }}</span>
+      <span matListItemLine>ID: {{ theme.idtheme }}</span>
+      <span matListItemLine>Price: {{ theme.price | currency:'EUR':'symbol':'1.2-2' }}</span>
+
+      <button mat-icon-button matTooltip="Elimina" (click)="RemoveFromCart( theme.idtheme )">
+        <mat-icon svgIcon="delete">
+        </mat-icon>
+      </button>
+
+    </mat-list-item>
+  </mat-list>
+
+  <!-- Template fallback se il carrello è vuoto -->
+  <ng-template #emptyCart>
+    <p>IL CARRELLO E' VUOTO!!</p>
+  </ng-template>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-raised-button color="primary" (click)="onCheckout()"
+    [disabled]="!data.cartItems.themes || data.cartItems.themes.length === 0">
+    Checkout
+  </button>
+</mat-dialog-actions>
+
+
+

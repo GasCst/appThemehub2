@@ -1,0 +1,26 @@
+<h2 mat-dialog-title class="dialog-title">Your Purchases</h2>
+
+<mat-dialog-content>
+  <mat-list>
+    <div *ngFor="let purchase of data.userPurchases" class="purchase-item">
+      <div class="purchase-header">
+        <!-- Purchase ID and Date -->
+        <h3 class="purchase-id">Purchase ID: {{ purchase.idPurchase }}</h3>
+        <p class="purchase-date">Date: {{ purchase.purchaseTime | date:'medium' }}</p>
+      </div>
+      
+      <mat-list>
+        <mat-list-item *ngFor="let theme of purchase.themesInPurchase" class="theme-item">
+          <div class="theme-details">
+            <span class="theme-name">{{ theme.theme.name }}</span>
+            <span class="theme-price">{{ theme.theme.price | currency }}</span>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-list>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

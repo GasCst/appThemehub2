@@ -1,0 +1,74 @@
+
+.dialog-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .purchase-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .purchase-header {
+    margin-bottom: 10px;
+  }
+  
+  .purchase-id {
+    font-size: 18px;
+    font-weight: 600;
+    color: #3f51b5;
+  }
+  
+  .purchase-date {
+    font-size: 14px;
+    color: #757575;
+  }
+  
+  .theme-item {
+    margin-left: 15px;
+    padding: 5px 0;
+  }
+  
+  .theme-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure full width */
+    gap: 10px; /* Adds a small gap between name and price */
+  }
+  
+  .theme-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #616161;
+    flex: 1; /* Allow theme name to take available space */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Add ellipsis for long names */
+  }
+  
+  .theme-price {
+    font-size: 14px;
+    color: #009688;
+    font-weight: 400;
+    white-space: nowrap; /* Prevent wrapping */
+    flex-shrink: 0; /* Prevent price from shrinking */
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+  }
+  
+  button[mat-button] {
+    color: #3f51b5;
+    font-weight: 500;
+  }
+  
+  
+
+  
